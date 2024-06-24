@@ -176,7 +176,7 @@ const Profile = () => {
 
 export const UserName = () => {
     const {user} = useSelector((state) => state.auth);
-    const username = user ?.name || "...";
+    const username = user?.name || "...";
     return(
         <span style={{color: "#ff7722"}}>Hi, {shortenText(username,9)} |</span>
     )
