@@ -47,7 +47,9 @@ const getUser = async() => {
 
 // Update user
 const updateUser = async(userData) => {
-    const response = await axios.patch(API_URL+"updateUser", userData)
+    const response = await axios.patch(API_URL+"updateUser", userData,{
+        withCredentials: true,
+    })
     // we already specifrid credentials to be tru in app.js so we don't need to do it further for every http request
     
     return response.data;
