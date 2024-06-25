@@ -21,11 +21,9 @@ const Profile = () => {
     const initialState = {
         name: user?.name || "",
         email: user?.email || "",
-        address: {
-            address: user?.address.address ||"",
-            state: user?.address.state ||"",
-            country: user?.address.country ||"",
-        },
+        address: user?.address ||"",
+        state: user?.state ||"",
+        country: user?.country ||"",
         phone: user?.phone || "",
         role: user?.role || "",
         photo: user?.photo || "",
@@ -45,11 +43,9 @@ const Profile = () => {
             setProfile({
                 name: user?.name || "",
                 email: user?.email || "",
-                address: {
-                    address: user?.address.address ||"",
-                    state: user?.address.state ||"",
-                    country: user?.address.country ||""
-                },
+                address: user?.address ||"",
+                state: user?.state ||"",
+                country: user?.country ||"",
                 phone: user?.phone || "",
                 role: user?.role || "",
                 photo: user?.photo || "",
@@ -62,11 +58,9 @@ const Profile = () => {
         const userData = {
             name: profile.name,
             phone: profile.phone,
-            address: {
-                address: profile.address,
-                state: profile.state,
-                country: profile.country,
-            },    
+            address: profile.address,
+            state: profile.state,
+            country: profile.country,    
         }
         // console.log(userData);
         await dispatch(updateUser(userData));
@@ -149,16 +143,16 @@ const Profile = () => {
                                         <input type='text' value={profile?.phone} name='phone' onChange={handleInputChange}  required></input>
                                     </p>
                                     <p>
-                                        <label>address</label>
-                                        <input type='text' value={profile?.address?.address} name='address' onChange={handleInputChange}></input>
+                                        <label>Address</label>
+                                        <input type='text' value={profile?.address} name='address' onChange={handleInputChange}></input>
                                     </p>
                                     <p>
                                         <label>State</label>
-                                        <input type='text' value={profile?.address?.state} name='state' onChange={handleInputChange}></input>
+                                        <input type='text' value={profile?.state} name='state' onChange={handleInputChange}></input>
                                     </p>
                                     <p>
                                         <label>Country</label>
-                                        <input type='text' value={profile?.address?.country} name='country' onChange={handleInputChange}></input>
+                                        <input type='text' value={profile?.country} name='country' onChange={handleInputChange}></input>
                                     </p>
                                     <button className='--btn --btn-primary --btn-block'>
                                         Update Profile
