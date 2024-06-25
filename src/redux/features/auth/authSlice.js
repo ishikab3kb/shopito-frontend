@@ -91,6 +91,7 @@ export const updateUser  =createAsyncThunk(
     "auth/updateUser",
     async(userData, thunkAPI) => {
         try {
+            console.log(userData);
             return await authService.updateUser(userData)
         } catch(error) {
             // here we are just interest in catching any possible error and in this part of the application error can come in different forms. basically different apis can return error in different ways.
@@ -100,7 +101,7 @@ export const updateUser  =createAsyncThunk(
     }
 )
 
-// update user
+// update Photo
 export const updatePhoto  =createAsyncThunk(
     "auth/updatePhoto",
     async(userData, thunkAPI) => {
