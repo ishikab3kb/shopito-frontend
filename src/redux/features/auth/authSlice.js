@@ -56,7 +56,7 @@ export const logout  =createAsyncThunk(
     }
 )
 
-// logout user
+// login Status user
 export const getLoginStatus  =createAsyncThunk(
     "auth/getLoginStatus",
     // since we are not snding any data so _
